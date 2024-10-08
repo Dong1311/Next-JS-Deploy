@@ -46,7 +46,7 @@ const CreateProduct = () => {
                 formData.append('files', image);
 
                 // Gửi yêu cầu upload ảnh kèm token trong header
-                const uploadRes = await axios.post('http://localhost:1337/api/upload', formData, {
+                const uploadRes = await axios.post('https://9160-117-7-238-234.ngrok-free.app/api/upload', formData, {
                     headers: {
                         Authorization: `Bearer ${token}`, // Thêm token vào header
                     }
@@ -55,7 +55,7 @@ const CreateProduct = () => {
             }
 
             // Tạo sản phẩm mới với dữ liệu
-            await axios.post('http://localhost:1337/api/products', {
+            await axios.post('https://9160-117-7-238-234.ngrok-free.app/api/products', {
                 data: {
                     Name: name,
                     Price: price,

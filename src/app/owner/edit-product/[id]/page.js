@@ -3,7 +3,7 @@ import EditProductForm from './EditProductForm';
 
 //  fetch danh sách sản phẩm và tạo ra các route tĩnh
 export async function generateStaticParams() {
-    const res = await fetch('http://localhost:1337/api/products');
+    const res = await fetch('https://9160-117-7-238-234.ngrok-free.app/api/products');
     const products = await res.json();
     console.log("product:",products);
     return products.data.map((product) => ({
@@ -17,7 +17,7 @@ export async function generateStaticParams() {
 export default async function EditProductPage({ params }) {
     const { id } = params; 
 
-    const res = await fetch(`http://localhost:1337/api/products/${id}?populate=*`, { next: { revalidate: 10 } });
+    const res = await fetch(`https://9160-117-7-238-234.ngrok-free.app/api/products/${id}?populate=*`, { next: { revalidate: 10 } });
     if (!res.ok) {
         throw new Error('Failed to fetch product');
     }

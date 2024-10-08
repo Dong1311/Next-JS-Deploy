@@ -14,7 +14,7 @@ const Shop = () => {
 
     const fetchProducts = useCallback(async () => {
         try {
-            const res = await axios.get(`http://localhost:1337/api/products?populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}&locale=${language}`);
+            const res = await axios.get(`https://9160-117-7-238-234.ngrok-free.app/api/products?populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}&locale=${language}`);
             console.log("Products data: ", res.data);
             if (res.data && res.data.data) {
                 setProducts(res.data.data); 
@@ -56,7 +56,7 @@ const Shop = () => {
                             <div className="card">
                                 {product.attributes.Image && product.attributes.Image.data && (
                                     <Image
-                                        src={`http://localhost:1337${product.attributes.Image.data.attributes.url}`} 
+                                        src={`https://9160-117-7-238-234.ngrok-free.app${product.attributes.Image.data.attributes.url}`} 
                                         className="card-img-top" 
                                         alt={product.attributes.Name} 
                                         style={{ height: '150px', objectFit: 'contain' }} 

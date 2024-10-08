@@ -24,7 +24,7 @@ const ResetPasswordContent = () => { // Đổi tên component để dùng trong 
     }
 
     try {
-      const response = await fetch('http://localhost:1337/api/auth/reset-password', {
+      const response = await fetch('https://9160-117-7-238-234.ngrok-free.app/api/auth/reset-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -11,7 +11,7 @@ const ForgotPassword = () => {
   const handleForgotPassword = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:1337/api/auth/forgot-password', {
+      await axios.post('https://9160-117-7-238-234.ngrok-free.app/api/auth/forgot-password', {
         email: email,
       });
       setMessage('An email has been sent to reset your password.');

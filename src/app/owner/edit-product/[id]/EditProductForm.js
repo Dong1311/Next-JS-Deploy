@@ -14,7 +14,7 @@ export default function EditProductForm({ product }) {
     const [image, setImage] = useState(null); // State để lưu ảnh đã chọn
 
     const imageUrl = product.attributes.Image?.data?.attributes?.url;
-    const imagePreviewUrl = imageUrl ? `http://localhost:1337${imageUrl}` : '';
+    const imagePreviewUrl = imageUrl ? `https://9160-117-7-238-234.ngrok-free.app${imageUrl}` : '';
     const [imagePreview, setImagePreview] = useState(imagePreviewUrl); // Xem trước hình ảnh đã chọn
     
     // Xử lý khi người dùng chọn ảnh mới
@@ -34,7 +34,7 @@ export default function EditProductForm({ product }) {
                 const formData = new FormData();
                 formData.append('files', image);
 
-                const uploadRes = await axios.post('http://localhost:1337/api/upload', formData, {
+                const uploadRes = await axios.post('https://9160-117-7-238-234.ngrok-free.app/api/upload', formData, {
                     headers: {
                         Authorization: `Bearer ${token}`, // Thêm token vào tiêu đề
                     },
@@ -43,7 +43,7 @@ export default function EditProductForm({ product }) {
             }
 
             await axios.put(
-                `http://localhost:1337/api/products/${product.id}`,
+                `https://9160-117-7-238-234.ngrok-free.app/api/products/${product.id}`,
                 {
                     data: {
                         Name: name,

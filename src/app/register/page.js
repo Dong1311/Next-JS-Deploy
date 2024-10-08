@@ -18,7 +18,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:1337/api/auth/local/register', {
+      const response = await axios.post('https://9160-117-7-238-234.ngrok-free.app/api/auth/local/register', {
         username,
         email,
         password,

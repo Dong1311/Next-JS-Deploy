@@ -17,7 +17,7 @@ const Login = () => {
         try {
             const token = localStorage.getItem('token');
 
-            const response = await axios.get('http://localhost:1337/api/users/me?populate=role', {
+            const response = await axios.get('https://9160-117-7-238-234.ngrok-free.app/api/users/me?populate=role', {
                 headers: {
                     Authorization: `Bearer ${token}`, 
                 },
@@ -42,7 +42,7 @@ const Login = () => {
     const handleLogin = async (e: React.FormEvent) => {
       e.preventDefault();
       try {
-          const res = await axios.post('http://localhost:1337/api/auth/local', {
+          const res = await axios.post('https://9160-117-7-238-234.ngrok-free.app/api/auth/local', {
               identifier: username,
               password: password,
           });
@@ -75,12 +75,12 @@ const Login = () => {
   
 
     const handleGitHubLogin = () => {
-        const strapiUrl = "http://localhost:1337/api/connect/github/";
+        const strapiUrl = "https://9160-117-7-238-234.ngrok-free.app/api/connect/github/";
         window.location.href = strapiUrl; // Điều hướng sang đăng nhập bằng GitHub
     };
 
     const handleGoogleLogin = () => {
-        const strapiUrl = "http://localhost:1337/api/connect/google/";
+        const strapiUrl = "https://9160-117-7-238-234.ngrok-free.app/api/connect/google/";
         window.location.href = strapiUrl; // Điều hướng sang đăng nhập bằng Google
     };
 

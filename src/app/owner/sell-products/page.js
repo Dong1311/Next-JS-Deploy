@@ -19,7 +19,7 @@ const SellProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:1337/api/products');
+        const res = await axios.get('https://9160-117-7-238-234.ngrok-free.app/api/products');
         setProducts(res.data.data);
       } catch (error) {
         console.error('Failed to fetch products', error);
@@ -73,7 +73,7 @@ const SellProducts = () => {
   const updateRevenue = async () => {
     try {
       // Lấy thông tin hiện tại của revenue
-      const revenueRes = await axios.get(`http://localhost:1337/api/revenues/${revenueId}`, {
+      const revenueRes = await axios.get(`https://9160-117-7-238-234.ngrok-free.app/api/revenues/${revenueId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`, // Gửi token nếu cần
         },
@@ -85,7 +85,7 @@ const SellProducts = () => {
       const newRevenue = currentRevenue + (totalAmount - discount);
       console.log("newRevenue: ",newRevenue);
       // Gửi yêu cầu cập nhật revenue
-      const updateRes = await axios.put(`http://localhost:1337/api/revenues/${revenueId}`, {
+      const updateRes = await axios.put(`https://9160-117-7-238-234.ngrok-free.app/api/revenues/${revenueId}`, {
         data: {
           revenue: newRevenue,
         },

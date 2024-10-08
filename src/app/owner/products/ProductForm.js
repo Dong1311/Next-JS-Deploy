@@ -20,7 +20,7 @@ export default function ProductForm({ initialProducts, initialTotalPages }) {
                 const currentLocale = i18n.language;
 
                 const res = await fetch(
-                    `http://localhost:1337/api/products?populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}&locale=${currentLocale}`,
+                    `https://9160-117-7-238-234.ngrok-free.app/api/products?populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}&locale=${currentLocale}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -84,7 +84,7 @@ export default function ProductForm({ initialProducts, initialTotalPages }) {
                         <div className="card" onClick={() => handleCardClick(product.id)} style={{ cursor: 'pointer' }}>
                             {product.attributes.Image && product.attributes.Image.data && (
                                 <img
-                                    src={`http://localhost:1337${product.attributes.Image.data.attributes.url}`}
+                                    src={`https://9160-117-7-238-234.ngrok-free.app${product.attributes.Image.data.attributes.url}`}
                                     className="card-img-top"
                                     alt={product.attributes.Name}
                                     style={{ height: '150px', objectFit: 'contain' }}
